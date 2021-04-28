@@ -14,8 +14,8 @@ def get_bot_token():
     session = boto3.session.Session()
     client = session.client(service_name = 'secretsmanager', region_name = "us-east-1")
     request = client.get_secret_value(SecretId = SECRET)
-    # TOKEN = json.loads(request['SecretString'])['TOKEN']
-    TOKEN = "1702654441:AAFIGTMFT40a14w_tVOkNisD6z9O4cqTX_E"
+    TOKEN = json.loads(request['SecretString'])['TOKEN']
+    
     return TOKEN
 
 def get_bot_client():
